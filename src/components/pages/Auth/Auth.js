@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 class Auth extends React.Component {
-  static propTypes = {
-    authed: PropTypes.bool.isRequired,
-  }
+  // static propTypes = {
+  //   authed: PropTypes.bool.isRequired,
+  // }
 
   logIn = (e) => {
     e.preventDefault();
