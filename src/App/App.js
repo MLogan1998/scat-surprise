@@ -7,6 +7,9 @@ import connection from '../helpers/data/connection';
 
 import NavBar from '../javascripts/components/pages/NavBar/NavBar';
 import Home from '../javascripts/components/pages/Home/Home';
+import EditBirb from '../javascripts/components/pages/EditBirb/EditBirb';
+import NewBirb from '../javascripts/components/pages/NewBirb/NewBirb';
+import SingleBirb from '../javascripts/components/pages/SingleBirb/SingleBirb';
 
 import './App.scss';
 
@@ -37,7 +40,7 @@ class App extends React.Component {
     const loadComponent = () => {
       if (authed) {
         const uid = authData.getUid();
-        return <Home uid={uid}/>;
+        return <div><Home uid={uid}/> <EditBirb uid={uid}/> <NewBirb uid={uid}/> <SingleBirb uid={uid}/></div>;
       }
       return '';
     };
