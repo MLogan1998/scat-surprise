@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -45,7 +46,13 @@ class NavBar extends React.Component {
         return (
           <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/components/">Components</NavLink>
+            <NavLink tag={RRNavLink} to='/home'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={RRNavLink} to='/new'>New Bird</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink onClick={this.signOut}>Sign Out</NavLink>
           </NavItem>
         </Nav>
         );
