@@ -16,10 +16,10 @@ class Home extends React.Component {
 
   render() {
     const { birbs } = this.state;
-    const birbcards = birbs.map((birb) => <BirbCard key={birb.id}/>);
+    const birbcards = birbs.map((birb) => <BirbCard key={birb.id} birb={birb}/>);
     return (
       <div>
-        { birbcards }
+      { birbcards }
       </div>
     );
   }

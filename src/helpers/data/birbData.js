@@ -19,4 +19,6 @@ const getBirbsByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => console.error(err));
 });
 
-export default { getBirbsByUid };
+const getBirbById = (birbid) => axios.get(`${baseUrl}/birbs/${birbid}.json`);
+
+export default { getBirbsByUid, getBirbById };
