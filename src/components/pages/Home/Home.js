@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import birbData from '../../../helpers/data/birbData';
+import authData from '../../../helpers/data/authData';
+import BirbCard from '../../shared/BirbCard/BirbCard';
 
 class Home extends React.Component {
-  editBirdEvent= (e) => {
-    e.preventDefault();
-    const birdId = 'bird20';
-    this.props.history.push(`/edit/${birdId}`);
+  state = {
+    birbs: [],
+  }
+
+  componentDidMount() {
+    birbData.getBirbsByUid(authData.getUid())
+      .then((birbs) => this.setState({ birbs }))
+      .catch((err) => console.error(err));
   }
 
   render() {
+    const { birbs } = this.state;
+    const birbcards = birbs.map((birb) => <BirbCard key={birb.id} birb={birb}/>);
     return (
       <div>
-      <h4>Home</h4>
-      <button className="btn btn-primary" onClick={this.editBirdEvent}>Edit Bird</button>
-      <Link to='/new'>New Bird</Link>
+      { birbcards }
       </div>
     );
   }
