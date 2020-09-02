@@ -21,4 +21,6 @@ const getBirbsByUid = (uid) => new Promise((resolve, reject) => {
 
 const getBirbById = (birbid) => axios.get(`${baseUrl}/birbs/${birbid}.json`);
 
-export default { getBirbsByUid, getBirbById };
+const saveNewBird = (newBirb) => axios.post(`${baseUrl}/birbs.json`, newBirb);
+
+export default { getBirbsByUid, getBirbById, saveNewBird };

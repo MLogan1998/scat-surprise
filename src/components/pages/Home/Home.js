@@ -3,6 +3,8 @@ import birbData from '../../../helpers/data/birbData';
 import authData from '../../../helpers/data/authData';
 import BirbCard from '../../shared/BirbCard/BirbCard';
 
+import './Home.scss';
+
 class Home extends React.Component {
   state = {
     birbs: [],
@@ -18,7 +20,7 @@ class Home extends React.Component {
     const { birbs } = this.state;
     const birbcards = birbs.map((birb) => <BirbCard key={birb.id} birb={birb}/>);
     return (
-      <div>
+      <div className="birbHouse">
       { birbcards }
       </div>
     );
