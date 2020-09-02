@@ -15,8 +15,10 @@ class SingleBirb extends React.Component {
   }
 
   render() {
+    const { birb } = this.state;
+
     return (
-      <h2>single birb</h2>
+      <h2>{birb.type}</h2>
     );
   }
 }
